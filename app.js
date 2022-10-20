@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const { engine } = require('express-handlebars');
+const admin = require('./routes/admin');
 
 //Congigurações
 //Template Engine
@@ -14,6 +15,8 @@ app.set('views', './views');
 app.get('/', (req, res) => {
 	res.render('index');
 });
+
+app.use('/admin', admin);
 
 const port = 9898;
 app.listen(port);
