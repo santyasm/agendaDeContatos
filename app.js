@@ -18,5 +18,5 @@ app.get('/', (req, res) => {
 
 app.use('/admin', admin);
 
-const port = 9898;
+const port = 9595;
 app.listen(port);
