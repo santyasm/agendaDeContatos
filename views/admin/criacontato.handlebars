@@ -2,21 +2,24 @@
     <div class="card-body" style="width: 40rem;">
         <p class="display-6">Criar novo contato</p>
         <hr>
-        <label for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome">
+        <form action="/admin/criacontato" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome">
 
-        <label for="telefone">Telefone</label>
-        <input type="tel" class="form-control" name="telefone">
+            <label for="telefone">Telefone</label>
+            <input type="tel" class="form-control" name="telefone">
 
-        <label for="email">Email</label>
-        <input type="email" class="form-control" name="email">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email">
 
-        <label for="aniversario">Aniversário</label>
-        <input type="date" class="form-control" name="aniversario">
+            <label for="aniversario">Aniversário</label>
+            <input type="date" class="form-control" name="aniversario">
 
-        <label for="descricao">Informações complementares</label>
-        <textarea class="form-control" name="descricao" id="" cols="30" rows="10"></textarea>
+            <label for="descricao">Informações complementares</label>
+            <textarea class="form-control" name="complementares" id="" cols="30" rows="10"></textarea>
 
-        <button class="btn btn-success mt-4">Adicionar</button>
+            <button class="btn btn-success mt-4">Adicionar</button>
+
+        </form>
     </div>
 </div>
