@@ -15,7 +15,7 @@ const Contato = new Schema({
 		required: true
 	},
 	aniversario: {
-		type: Date
+		type: String
 	},
 	complementares: {
 		type: String

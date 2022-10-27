@@ -9,19 +9,39 @@ router.get('/', (req, res) => {
 });
 
 router.post('/criacontato', (req, res) => {
-	const novoContato = new Contato({
-		nome: req.body.nome,
-		telefone: req.body.telefone,
-		email: req.body.email,
-		complementares: req.body.complementares,
-		aniversario: req.body.aniversario
-	});
-	novoContato.save().then(() => {
-		console.log('Contato adicionado com sucesso.');
-		res.redirect('/');
-	}).catch((err) => {
-		console.log(err);
-	});
+	const erros = [];
+	
+	if (!req.body.nome || typeof req.body.nome == 'undefined' || req.body.nome == null) {
+		erros.push({texto: 'Nome inválido.'});
+	}
+	if (!req.body.telefone || typeof req.body.telefone == 'undefined' || req.body.telefone == null) {
+		erros.push({texto: 'Telefone inválido.'});
+	}
+	if (!req.body.email || typeof req.body.email == 'undefined' || req.body.email == null) {
+		erros.push({ texto: 'Email inválido.' });
+		
+	}
+
+	if (erros.length > 0) {
+		res.render('admin/criacontato', { erros: erros });
+	} else {
+		const novoContato = new Contato({
+			nome: req.body.nome,
+			telefone: req.body.telefone,
+			email: req.body.email,
+			complementares: req.body.complementares,
+			aniversario: req.body.aniversario,
+		});
+		novoContato
+			.save()
+			.then(() => {
+				console.log('Contato adicionado com sucesso.');
+				res.redirect('/');
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	}
 });
 
 module.exports = router;

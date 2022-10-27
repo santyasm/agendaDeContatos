@@ -26,12 +26,8 @@ app.get('/', (req, res) => {
 
 app.use('/admin', admin);
 
-<<<<<<< HEAD
 const port = 9898;
 app.listen(port, () => {
 	console.log(`Servidor rodando em http://localhost:${port}`);
 });
-=======
-const port = 9595;
-app.listen(port);
->>>>>>> 7c094f08d87ca42470a139ed066714f51753fedb
+
