@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
 	res.render('admin/criacontato');
 });
 
+router.get('/criacontato', (req, res) => {
+	res.render('admin/criacontato');
+});
+
 router.post('/criacontato', (req, res) => {
 	const erros = [];
 	
