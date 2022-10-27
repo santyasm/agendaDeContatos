@@ -40,6 +40,7 @@ router.post('/criacontato', (req, res) => {
 			.save()
 			.then(() => {
 				console.log('Contato adicionado com sucesso.');
+				req.flash('success_msg', 'Contato adicionado com sucesso!');
 				res.redirect('/');
 			})
 			.catch((err) => {
