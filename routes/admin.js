@@ -49,4 +49,8 @@ router.post('/criacontato', (req, res) => {
 	}
 });
 
+//Lista de Contatos
+router.get('/listadecontatos', (req, res) => {
+	res.send('Lista de contatos: ');
+});
 module.exports = router;
