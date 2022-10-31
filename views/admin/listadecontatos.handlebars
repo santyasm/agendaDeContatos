@@ -4,15 +4,15 @@
       <th scope="col">Nome</th>
       <th scope="col">Telefone</th>
       <th scope="col">e-mail</th>
-      <th scope="col">Handle</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
+    {{#each contatos}}
     <tr>
-      <th scope="row">1</th>
-      <td>@Nome</td>
-      <td>@Telefone</td>
-      <td>@e-mail</td>
+      <th scope="row">{{nome}}</th>
+      <td>{{telefone}}</td>
+      <td>{{email}}</td>
     </tr>
+    {{/each}}
   </tbody>
 </table>

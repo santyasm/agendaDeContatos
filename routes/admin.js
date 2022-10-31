@@ -52,7 +52,12 @@ router.post('/criacontato', (req, res) => {
 
 //Lista de Contatos
 router.get('/listadecontatos', (req, res) => {
-	res.render('admin/listadecontatos');
+	Contato.find().lean().then((contatos) => {
+		res.render('admin/listadecontatos', {contatos});
+	}).catch((err) => {
+		console.log(err);
+	});
+	
 });
 
 module.exports = router;
