@@ -1,9 +1,11 @@
-<table class="table table-dark table-borderless">
+<div class="table-responsive">
+<table class="table table-dark table-borderless align-middle">
   <thead>
     <tr>
       <th scope="col">Nome</th>
       <th scope="col">Telefone</th>
-      <th scope="col">e-mail</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Ações</th>
     </tr>
   </thead>
   <tbody class="table-group-divider">
@@ -12,7 +14,11 @@
       <th scope="row">{{nome}}</th>
       <td>{{telefone}}</td>
       <td>{{email}}</td>
+      <td class="d-flex" style="gap: 10px"><button class="btn btn-danger">Excluir</button>
+      <button class="btn btn-success">Editar</button>
+      <button class="btn btn-secondary">Detalhes</button></td>
     </tr>
     {{/each}}
   </tbody>
 </table>
+</div>
