@@ -70,4 +70,9 @@ router.get('/removecontato/:id', (req, res) => {
 	});
 });
 
+//Editar Contato
+router.get('/editarcontato', (req, res) => {
+	res.render('admin/editarcontato');
+});
+
 module.exports = router;

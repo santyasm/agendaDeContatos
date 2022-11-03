@@ -1,0 +1,29 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{/each}}
+
+<div class="card bg-dark" style="width: 60rem;">
+    <div class="card-body bg-dark" style="width: 40rem; color: white">
+        <p class="display-6" style="color: #008300;">Criar novo contato</p>
+        <hr>
+        <form action="/admin/criacontato" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control bg-dark mt-2" style="color: white;" name="nome">
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" class="form-control bg-dark mt-2" style="color: white;" name="telefone">
+
+            <label for="email">Email</label>
+            <input type="email" class="form-control bg-dark mt-2" style="color: white;" name="email">
+
+            <label for="aniversario">Aniversário</label>
+            <input type="date" class="form-control bg-dark mt-2" style="color: white;" name="aniversario">
+
+            <label for="descricao">Informações complementares</label>
+            <textarea class="form-control bg-dark mt-2" style="color: white;" name="complementares" id="" cols="30" rows="10"></textarea>
+
+            <button class="btn btn-success mt-4">Adicionar</button>
+
+        </form>
+    </div>
+</div>
