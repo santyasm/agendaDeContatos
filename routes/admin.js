@@ -41,7 +41,7 @@ router.post('/criacontato', (req, res) => {
 			.then(() => {
 				console.log('Contato adicionado com sucesso.');
 				req.flash('success_msg', 'Contato adicionado com sucesso!');
-				res.redirect('/');
+				res.redirect('/admin/listadecontatos');
 			})
 			.catch((err) => {
 				console.log(err);
@@ -52,12 +52,22 @@ router.post('/criacontato', (req, res) => {
 
 //Lista de Contatos
 router.get('/listadecontatos', (req, res) => {
-	Contato.find().lean().then((contatos) => {
+	Contato.find().lean().sort({date: 'desc'}).then((contatos) => {
 		res.render('admin/listadecontatos', {contatos});
 	}).catch((err) => {
 		console.log(err);
 	});
 	
+});
+
+//Remove Contato
+router.get('/removecontato/:id', (req, res) => {
+	Contato.remove({ _id: req.params.id }).then(() => {
+		req.flash('success_msg', 'Contato deletado.');
+		res.redirect('/admin/listadecontatos');
+	}).catch((err) => {
+		console.log(err);
+	});
 });
 
 module.exports = router;

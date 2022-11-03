@@ -19,6 +19,10 @@ const Contato = new Schema({
 	},
 	complementares: {
 		type: String
+	},
+	data: {
+		type: Date,
+		default: Date.now()
 	}
 });
 
