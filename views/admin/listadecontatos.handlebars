@@ -1,27 +1,34 @@
-<table class="table table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Telefone</th>
-      <th scope="col">E-mail</th>
-      <th scope="col">Ações</th>
-    </tr>
-  </thead>
- 
-  <tbody>
-    {{#each contatos}}
-      <tr>
-        <th scope="row">{{nome}}</th>
-        <td>{{telefone}}</td>
-        <td>{{email}}</td>
+<div class="card bg-dark">
+  <div class="card-body">
+    <h3 class="display-6" style="color: rgba(255, 255, 255, 0.856);">Lista de contatos</h3>
+    <hr style="color: white;">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        {{#each contatos}}
+          <tr>
+            <th scope="row">{{nome}}</th>
+            <td>{{telefone}}</td>
+            <td>{{email}}</td>
 
-        <td class="d-flex" style="gap: 10px"> <a href="/admin/removecontato/{{_id}}"><button class="btn btn-danger">Excluir</button></a>
+            <td class="d-flex" style="gap: 10px"> <a href="/admin/removecontato/{{_id}}"><button class="btn btn-danger">Excluir</button></a>
 
-        <a href="/admin/editarcontato">
-        <button class="btn btn-success">Editar</button></a>
-        <button class="btn btn-secondary">Detalhes</button></td>
-      </tr>
-    {{/each}}
-  </tbody>
-  
-</table>
+            <a href="/admin/editarcontato">
+            <button class="btn btn-success">Editar</button></a>
+            <button class="btn btn-secondary">Detalhes</button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+      
+    </table>
+
+  </div>
+</div>
